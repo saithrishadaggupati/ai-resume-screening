@@ -104,7 +104,7 @@ minHeight: "260px",
         }}
       >
         <Typography variant="h6">
-          ?? Drag & Drop Your Resume Here
+          📄 Drag & Drop Your Resume Here
         </Typography>
 
         <Typography color="text.secondary" sx={{ mt: 1, mb: 3 }}>

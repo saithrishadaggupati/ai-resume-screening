@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  Avatar
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box, Avatar } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
@@ -20,27 +13,20 @@ export default function Navbar() {
   ];
 
   return (
-    <AppBar
-      position="sticky"
-      elevation={0}
-      sx={{
-        bgcolor:"#ffffffCC",
-backdropFilter:"blur(14px)",
-        borderBottom:"1px solid #E5E7EB",
-boxShadow:"0 8px 30px rgba(15,23,42,.06)",
-        color: "#111827",
-      }}
-    >
-      <Toolbar sx={{ py:1.2 }}>
+    <AppBar position="sticky" elevation={0}>
+      <Toolbar sx={{ py: 1.5, px: { xs: 2, md: 5 } }}>
         <Typography
           variant="h6"
           sx={{
-            fontWeight: 800,
-            color: "#2563eb",
-            mr:6,
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: 700,
+            fontSize: "1.3rem",
+            color: "#1a1a1a",
+            mr: 6,
+            letterSpacing: "-0.5px",
           }}
         >
-          AI Resume Screening
+          RecruitAI
         </Typography>
 
         <Box sx={{ flexGrow: 1 }}>
@@ -50,25 +36,17 @@ boxShadow:"0 8px 30px rgba(15,23,42,.06)",
               component={Link}
               to={item.path}
               sx={{
-                mx: 1,
-                px:2.5,
-                py:1.2,
-                borderRadius:"12px",
+                mx: 0.5,
+                px: 2,
+                py: 1,
+                borderRadius: "10px",
                 textTransform: "none",
-                fontWeight: 700,
-                color:
-                  location.pathname === item.path
-                    ? "#ffffff"
-                    : "#374151",
-                bgcolor:
-                  location.pathname === item.path
-                    ? "#2563eb"
-                    : "transparent",
+                fontWeight: 600,
+                fontSize: "0.875rem",
+                color: location.pathname === item.path ? "#f5f0e8" : "#555",
+                bgcolor: location.pathname === item.path ? "#1a1a1a" : "transparent",
                 "&:hover": {
-                  bgcolor:
-                    location.pathname === item.path
-                      ? "#1d4ed8"
-                      : "#eff6ff",
+                  bgcolor: location.pathname === item.path ? "#333" : "#ede8df",
                 },
               }}
             >
@@ -79,13 +57,15 @@ boxShadow:"0 8px 30px rgba(15,23,42,.06)",
 
         <Avatar
           sx={{
-            bgcolor: "#2563eb",
-            width:44,
-            height:44,
+            bgcolor: "#1a1a1a",
+            color: "#f5f0e8",
+            width: 40,
+            height: 40,
             fontWeight: 700,
+            fontSize: "0.9rem",
           }}
         >
-          A
+          R
         </Avatar>
       </Toolbar>
     </AppBar>
