@@ -166,19 +166,6 @@ npm run dev
 
 ---
 
-## Future Enhancements
-
-- Bulk resume screening
-- ATS score optimization
-- Semantic candidate search
-- AI-powered recruiter recommendations
-- Interview scheduling integration
-- Email notifications
-- Multi-language resume support
-- Advanced analytics dashboard
-
----
-
 ## Built By
 
 **Daggupati Sai Thrisha**  
