@@ -95,6 +95,23 @@ Used to:
 
 ---
 
+## Authentication
+
+RecruitAI includes a full JWT-based authentication system. Recruiters can register an account and log in to access the platform. All routes are protected and require a valid token.
+
+## Analytics Pipeline
+
+Every resume uploaded is automatically logged to BigQuery with the following fields:
+- Candidate name and resume ID
+- Job title they applied for
+- Compatibility score
+- Matched and missing skills
+- Upload timestamp
+
+This enables recruiters to run SQL analytics on hiring trends, skill gaps, and candidate quality over time.
+
+---
+
 ## How to Run Locally
 
 Clone the repository:
