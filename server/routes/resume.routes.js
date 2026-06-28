@@ -9,6 +9,7 @@ const { analyzeResume } = require("../services/ai.service");
 const { compareSkills } = require("../services/matcher.service");
 const { indexResume } = require("../services/indexer.service");
 const { uploadToGCS } = require("../services/gcs.service");
+const { logResumeToBigQuery } = require("../services/bigquery.service");
 
 router.post("/:jobId/upload", upload.single("resume"), async (req, res) => {
   try {
@@ -32,6 +33,7 @@ router.post("/:jobId/upload", upload.single("resume"), async (req, res) => {
       matchedSkills: match.matched, missingSkills: match.missing, rawAI: data, status: "completed",
     });
     await indexResume(resume, data);
+    await logResumeToBigQuery(resume, job.title);
     res.json({ success: true, resume });
   } catch (err) {
     console.error(err);
