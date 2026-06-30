@@ -6,3 +6,5 @@ dist/
 build/
 uploads/
 .vscode/
+
+gcs-key.json
